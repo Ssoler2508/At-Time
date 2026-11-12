@@ -1,19 +1,27 @@
-/**
- * Cliente Supabase de servidor SOLO.
- * IMPORTANTE: Nunca importar este archivo en código de cliente (browser),
- * ya que usa SUPABASE_SERVICE_ROLE_KEY que tiene acceso total a la BD.
- * Este archivo debe mantenerse solo en el servidor (API routes, edge functions).
- */
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+import { createClient } from '@supabase/supabase-js';
 
-if (!supabaseUrl || !supabaseKey) {
+/**
+ * Cliente de Supabase para uso EXCLUSIVO del servidor.
+ *
+ * Este archivo NUNCA debe importarse en componentes cliente (islas de Astro,
+ * código que corre en el navegador). Usa SUPABASE_SERVICE_ROLE_KEY, una llave
+ * con privilegios administrativos que omite las políticas de RLS. Si se filtrara
+ * al frontend, cualquiera podría leer, modificar o borrar toda la base de datos.
+ * Mantenlo únicamente en endpoints de servidor (API routes, middleware, etc.).
+ */
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL as string | undefined;
+const supabaseServiceRoleKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY as
+  | string
+  | undefined;
+
+if (!supabaseUrl || !supabaseServiceRoleKey) {
   throw new Error(
-    'Faltan SUPABASE_URL o SUPABASE_SERVICE_ROLE_KEY en las variables de entorno.'
+    'Faltan PUBLIC_SUPABASE_URL o SUPABASE_SERVICE_ROLE_KEY en el entorno del servidor.'
   );
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey, {
+export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
