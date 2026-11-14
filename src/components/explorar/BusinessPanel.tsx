@@ -11,7 +11,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
   const [estadoLocal, setEstadoLocal] = useState<EstadoLocal>('Disponible');
   const [platoDelMomento, setPlatoDelMomento] = useState<string>('');
   const [ultimaActualizacao, setUltimaActualizacao] = useState<Date | null>(null);
-  const [metricas, setMetricas] = useState<string>('');
+  const [metricas, setMetricas] = useState<string>('Dato simulado: —');
 
   useEffect(() => {
     const intervalo = setInterval(() => {
@@ -32,7 +32,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
     const indice = Math.floor(Math.random() * promos.length);
     const nuevaPromo = promos[indice];
     setPlatoDelMomento(nuevaPromo);
-    setMetricas(`42 personas cerca vieron tu perfil hoy · 9 indicaron que van en camino`);
+    setMetricas(`Dato simulado: 42 personas cerca vieron tu perfil hoy · 9 indicaron que van en camino`);
   };
 
   useEffect(() => {
