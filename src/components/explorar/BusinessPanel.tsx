@@ -6,7 +6,7 @@ interface BusinessPanelProps {
   vistaActual: 'comensal' | 'negocio';
 }
 
-function BusinessPanel({ vistaActual }: BusinessPanelProps) {
+function BusinessPanel({ vistaActual = 'comensal' }: BusinessPanelProps) {
   const [visibleParaClientes, setVisibleParaClientes] = useState(true);
   const [estadoLocal, setEstadoLocal] = useState<EstadoLocal>('Disponible');
   const [platoDelMomento, setPlatoDelMomento] = useState<string>('');

@@ -13,7 +13,11 @@ interface SessionBarProps {
   setVistaActual: (vista: Vista) => void;
 }
 
-function SessionBar({ ubicaciones, vistaActual, setVistaActual }: SessionBarProps) {
+function SessionBar({
+  ubicaciones = [],
+  vistaActual = 'comensal',
+  setVistaActual = () => {},
+}: SessionBarProps) {
   const [ubicacionSeleccionada, setUbicacionSeleccionada] = useState<Ubicacion | null>(
     ubicaciones[0]
   );
