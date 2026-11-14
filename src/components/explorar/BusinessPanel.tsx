@@ -99,7 +99,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Disponible')}
-          style={{ color: estadoLocal === 'Disponible' ? 'var(--color-success)' : 'var(--color-text)', borderColor: estadoLocal === 'Disponible' ? 'var(--color-success)' : var(--color-border) }}
+          style={{ color: estadoLocal === 'Disponible' ? 'var(--color-success)' : 'var(--color-text)', borderColor: estadoLocal === 'Disponible' ? 'var(--color-success)' : 'var(--color-border)' }}
           >
             Disponible
           </label>
@@ -116,7 +116,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Pocas mesas')}
-          style={{ color: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : 'var(--color-text)', borderColor: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : var(--color-border) }}
+          style={{ color: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : 'var(--color-text)', borderColor: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : 'var(--color-border)' }}
           >
             Pocas mesas
           </label>
@@ -133,7 +133,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Cerrando pronto')}
-          style={{ color: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : 'var(--color-text)', borderColor: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : var(--color-border) }}
+          style={{ color: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : 'var(--color-text)', borderColor: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : 'var(--color-border)' }}
           >
             Cerrando pronto
           </label>
