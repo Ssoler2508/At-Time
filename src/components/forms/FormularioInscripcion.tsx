@@ -473,7 +473,7 @@ export default function FormularioInscripcion() {
           className="btn btn-grande"
           disabled={enviando}
         >
-          {enviando ? 'Enviando...' : 'Inscribe tu restaurante en el piloto'}
+          {enviando ? 'Enviando...' : 'Inscribe tu negocio en el piloto'}
         </button>
       </div>
     </form>
