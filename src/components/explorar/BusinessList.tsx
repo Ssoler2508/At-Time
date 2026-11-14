@@ -4,7 +4,7 @@ type Categoria =
   | 'Todos'
   | 'Almuerzo'
   | 'Café y trabajo'
-  | 'Algo rápido'
+  | 'Algo rápido' | 'Panadería'
   | 'Tardeo';
 
 type Negocio = {
@@ -116,19 +116,19 @@ function BusinessList() {
 
   return (
     <section
-      class="business-list"
+      className="business-list"
       style={{
         maxWidth: 'var(--max-width)',
         margin: '0 auto var(--spacing-xl)',
       }}
     >
-      <div class="filtros-bar" style={{ marginBottom: 'var(--spacing-lg)' }}>
-        <div class="filtro-grupo" style={{ marginRight: 'var(--spacing-md)' }}>
+      <div className="filtros-bar" style={{ marginBottom: 'var(--spacing-lg)' }}>
+        <div className="filtro-grupo" style={{ marginRight: 'var(--spacing-md)' }}>
           <label className="filtro-etiqueta" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: 'var(--spacing-xs)' }}>
             Categoría
           </label>
           <select
-            class="filtro-select"
+            className="filtro-select"
             style={{
               padding: 'var(--spacing-sm) var(--spacing-md)',
               fontFamily: 'var(--font-body)',
@@ -151,13 +151,13 @@ function BusinessList() {
           </select>
         </div>
 
-        <div class="filtro-grupo" style={{ marginRight: 'var(--spacing-md)' }}>
+        <div className="filtro-grupo" style={{ marginRight: 'var(--spacing-md)' }}>
           <label className="filtro-etiqueta" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: 'var(--spacing-xs)' }}>
             Búsqueda
           </label>
           <input
             type="text"
-            class="filtro-input"
+            className="filtro-input"
             style={{
               padding: 'var(--spacing-sm) var(--spacing-md)',
               fontFamily: 'var(--font-body)',
@@ -173,16 +173,16 @@ function BusinessList() {
               setFiltros((prev) => ({ ...prev, busqueda: e.target.value }))
             }
             placeholder="Nombre o antojo..."
-            ariaPlaceholder="Nombre o antojo..."
+            aria-placeholder="Nombre o antojo..."
           />
         </div>
 
-        <div class="filtro-grupo">
+        <div className="filtro-grupo">
           <label className="filtro-etiqueta" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: 'var(--spacing-xs)' }}>
             Cercanía
           </label>
           <select
-            class="filtro-select"
+            className="filtro-select"
             style={{
               padding: 'var(--spacing-sm) var(--spacing-md)',
               fontFamily: 'var(--font-body)',
@@ -204,13 +204,13 @@ function BusinessList() {
         </div>
       </div>
 
-      <ul class="lista-negocios" style={{ listStyle: 'none', padding: 0 }}>
+      <ul className="lista-negocios" style={{ listStyle: 'none', padding: 0 }}>
         {negociosFiltrados.length === 0 ? (
           <p style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: 'var(--spacing-lg)' }}>
             No hay negocios con estos filtros. Intenta cambiar la categoría o la cercanía.
           </p>
         ) : (
-          negocialesFiltrados.map((negocio) => (
+          negociosFiltrados.map((negocio) => (
             <li
               key={negocio.id}
               style={{
@@ -222,7 +222,7 @@ function BusinessList() {
                 transition: 'border-color var(--transition-fast)',
               }}
             >
-              <div class="negocio-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: 'var(--spacing-sm)' }}>
+              <div className="negocio-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: 'var(--spacing-sm)' }}>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-secondary)', margin: 0 }}>
                   {negocio.nombre}
                 </h3>

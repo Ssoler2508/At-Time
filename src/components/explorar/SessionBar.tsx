@@ -20,7 +20,7 @@ function SessionBar({ ubicaciones, vistaActual, setVistaActual }: SessionBarProp
 
   return (
     <section
-      class="session-bar"
+      className="session-bar"
       style={{
         background: 'var(--color-surface)',
         borderBottom: '1px solid var(--color-border)',
@@ -28,18 +28,18 @@ function SessionBar({ ubicaciones, vistaActual, setVistaActual }: SessionBarProp
         marginBottom: 'var(--spacing-xl)',
       }}
     >
-      <div class="session-bar-container" style={{ maxWidth: 'var(--max-width)', margin: '0 auto' }}>
-        <div class="session-bar-profile" style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
-          <span class="profile-name" style={{ fontWeight: 700, fontSize: '1rem' }}>
+      <div className="session-bar-container" style={{ maxWidth: 'var(--max-width)', margin: '0 auto' }}>
+        <div className="session-bar-profile" style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
+          <span className="profile-name" style={{ fontWeight: 700, fontSize: '1rem' }}>
             Hola, Mateo
           </span>
-          <span class="profile-zona" style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
+          <span className="profile-zona" style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
             Zona {ubicacionSeleccionada?.barrio ?? 'El Cable'}, Manizales
           </span>
         </div>
 
         <select
-          class="ubicacion-selector"
+          className="ubicacion-selector"
           style={{
             padding: 'var(--spacing-sm) var(--spacing-md)',
             fontFamily: 'var(--font-body)',
@@ -65,9 +65,9 @@ function SessionBar({ ubicaciones, vistaActual, setVistaActual }: SessionBarProp
           ))}
         </select>
 
-        <div class="vista-toggle" style={{ display: 'flex', gap: 'var(--spacing-sm)', alignItems: 'center' }}>
+        <div className="vista-toggle" style={{ display: 'flex', gap: 'var(--spacing-sm)', alignItems: 'center' }}>
           <button
-            class="btn-toggle"
+            className="btn-toggle"
             style={{
               padding: 'var(--spacing-xs) var(--spacing-sm)',
               fontFamily: 'var(--font-body)',
@@ -84,7 +84,7 @@ function SessionBar({ ubicaciones, vistaActual, setVistaActual }: SessionBarProp
             Vista Comensal
           </button>
           <button
-            class="btn-toggle"
+            className="btn-toggle"
             style={{
               padding: 'var(--spacing-xs) var(--spacing-sm)',
               fontFamily: 'var(--font-body)',

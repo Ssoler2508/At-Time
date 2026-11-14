@@ -43,7 +43,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
 
   return (
     <section
-      class="business-panel"
+      className="business-panel"
       style={{
         maxWidth: 'var(--max-width)',
         margin: '0 auto var(--spacing-xl)',
@@ -81,11 +81,11 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
         </label>
       </div>
 
-      <div class="panel-seccion" style={{ marginBottom: 'var(--spacing-xl)' }}>
+      <div className="panel-seccion" style={{ marginBottom: 'var(--spacing-xl)' }}>
         <label className="panel-etiqueta" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: 'var(--spacing-sm)' }}>
           Estado del local
         </label>
-        <div class="panel-estados" style={{ display: 'flex', gap: 'var(--spacing-sm)', marginTop: 'var(--spacing-sm)' }}>
+        <div className="panel-estados" style={{ display: 'flex', gap: 'var(--spacing-sm)', marginTop: 'var(--spacing-sm)' }}>
           <label className="panel-estado" style={{
             flex: 1,
             padding: 'var(--spacing-sm)',
@@ -99,7 +99,6 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Disponible')}
-          style={{ color: estadoLocal === 'Disponible' ? 'var(--color-success)' : 'var(--color-text)', borderColor: estadoLocal === 'Disponible' ? 'var(--color-success)' : 'var(--color-border)' }}
           >
             Disponible
           </label>
@@ -116,7 +115,6 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Pocas mesas')}
-          style={{ color: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : 'var(--color-text)', borderColor: estadoLocal === 'Pocas mesas' ? 'var(--color-primary)' : 'var(--color-border)' }}
           >
             Pocas mesas
           </label>
@@ -133,20 +131,19 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
             cursor: 'pointer',
           }}
           onClick={() => setEstadoLocal('Cerrando pronto')}
-          style={{ color: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : 'var(--color-text)', borderColor: estadoLocal === 'Cerrando pronto' ? 'var(--color-error)' : 'var(--color-border)' }}
           >
             Cerrando pronto
           </label>
         </div>
       </div>
 
-      <div class="panel-seccion" style={{ marginBottom: 'var(--spacing-xl)' }}>
+      <div className="panel-seccion" style={{ marginBottom: 'var(--spacing-xl)' }}>
         <label className="panel-etiqueta" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: 'var(--spacing-sm)' }}>
           Plato o promoción del momento
         </label>
         <input
           type="text"
-          class="panel-input"
+          className="panel-input"
           style={{
             width: '100%',
             padding: 'var(--spacing-sm) var(--spacing-md)',
@@ -161,7 +158,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
           value={platoDelMomento}
           onChange={(e) => setPlatoDelMomento(e.target.value)}
           placeholder="Ej. Tapas de temporada y copa $9.500"
-          ariaPlaceholder="Ej. Tapas de temporada y copa $9.500"
+          aria-placeholder="Ej. Tapas de temporada y copa $9.500"
         />
         <button
           className="btn"
@@ -184,7 +181,7 @@ function BusinessPanel({ vistaActual }: BusinessPanelProps) {
       </div>
 
       {ultimaActualizacao && (
-        <div class="panel-metricas" style={{
+        <div className="panel-metricas" style={{
           marginTop: 'var(--spacing-xl)',
           paddingTop: 'var(--spacing-md)',
           borderTop: '1px solid var(--color-border)',
