@@ -4,12 +4,16 @@ import Hero from '../components/landing/Hero.astro';
 import ComoFunciona from '../components/landing/ComoFunciona.astro';
 import ParaQuienEs from '../components/landing/ParaQuienEs.astro';
 import CierreCTA from '../components/landing/CierreCTA.astro';
+import FormularioInscripcion from '../components/forms/FormularioInscripcion';
+import '../components/forms/formulario-inscripcion.css';
 ---
 
 <Layout>
   <Hero />
   <ComoFunciona />
   <ParaQuienEs />
-  <section id="inscripcion"></section>
+  <section id="inscripcion" class="seccion-inscripcion">
+    <FormularioInscripcion client:visible />
+  </section>
   <CierreCTA />
 </Layout>

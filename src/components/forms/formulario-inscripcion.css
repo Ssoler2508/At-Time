@@ -1,0 +1,229 @@
+/* Sección de inscripción (#inscripcion) */
+
+.seccion-inscripcion {
+  padding: var(--spacing-xl) var(--spacing-sm);
+  scroll-margin-top: var(--spacing-lg);
+}
+
+.inscripcion-formulario,
+.inscripcion-tarjeta {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+}
+
+.inscripcion-formulario {
+  text-align: left;
+}
+
+/* Campos */
+
+.campo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.campo-etiqueta {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-headline);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.campo-control {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition-fast);
+}
+
+select.campo-control {
+  cursor: pointer;
+}
+
+.campo-control:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.campo-control[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.campo-error {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-error);
+}
+
+.campo-error:not(:empty) {
+  margin-top: var(--spacing-xs);
+}
+
+/* Radios */
+
+.campo-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.campo-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-height: 44px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.campo-radio input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--color-primary);
+}
+
+/* Checkbox de autorización */
+
+.campo-etiqueta-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.campo-etiqueta-checkbox input {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--color-primary);
+}
+
+.campo-etiqueta-checkbox a {
+  text-decoration: underline;
+}
+
+/* Honeypot: fuera de pantalla, nunca display:none */
+
+.campo-oculto {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Error general y acciones */
+
+.inscripcion-error-general {
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--color-error);
+  background: var(--color-error-background);
+  border: 1px solid var(--color-error);
+  border-radius: var(--border-radius);
+}
+
+.inscripcion-error-general:not(:empty) {
+  margin-bottom: var(--spacing-md);
+}
+
+.inscripcion-error-general:empty {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.inscripcion-acciones {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botones grandes */
+
+.btn.btn-grande {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn.btn-grande:disabled {
+  background: var(--color-text-muted);
+  color: var(--color-background);
+  cursor: not-allowed;
+}
+
+.btn.btn-grande:disabled:hover {
+  background: var(--color-text-muted);
+}
+
+/* Tarjeta de éxito */
+
+.inscripcion-tarjeta {
+  text-align: center;
+}
+
+.inscripcion-tarjeta-titulo {
+  margin-bottom: 0;
+  color: var(--color-success);
+}
+
+.inscripcion-tarjeta-titulo:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--border-radius);
+}
+
+.inscripcion-tarjeta p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+@media (min-width: 640px) {
+  .seccion-inscripcion {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .inscripcion-formulario,
+  .inscripcion-tarjeta {
+    padding: var(--spacing-xl);
+  }
+}
